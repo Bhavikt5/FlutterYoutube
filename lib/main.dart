@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:myapp/home_page.dart';
 import 'package:myapp/login_page.dart';
+import 'package:myapp/utils/routes.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -14,8 +18,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       theme: ThemeData(primarySwatch: Colors.deepPurple),
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/",
       routes: {
-        "/": (context) => const LoginPage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
       },
     );
   }
